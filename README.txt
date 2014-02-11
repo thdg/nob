@@ -1,26 +1,40 @@
-Nub Programming Language!
+Nob Programming Language!
+=========================
 
-Nub er forritunarmál sem er hannað sérstaklega til þess að vera einfalt og þægilegt í notkun fyrir einfalda stærðfræðilega útreikninga. Nub er því reglulega hentugt til að nota í kennslu í bæði stærðfræði og forritun á hvaða skólastigi sem er, fyrir byrjendur jafnt sem lengra komna.
+Nob er forritunarmál sem er hannað sérstaklega til þess að vera einfalt og þægilegt í notkun fyrir einfalda stærðfræðilega útreikninga. 
+Nub er því verulega hentugt til að nota í kennslu í bæði stærðfræði og forritun á hvaða skólastigi sem er - fyrir byrjendur jafnt sem lengra komna.
 
 Dæmi um forrit í Nub:
+---------------------
 
---------------------------------------------------------------------
-PI: 1.14 					!skilgreining á fastanum PI
-rummal_kulu: y = r^3*PI*4/3 !falls skilgreining fyrir rúmmál kúlu
+Fall til að reikna út rúmmál kúlu og kall á það fall:
 
-v: rummal_kulu 3 			!kallað á fallið rummal_kulu með r=3
-printn v 					!rúmmálið prentað út í sér línu
---------------------------------------------------------------------
-print "Halló heimur!\n"
---------------------------------------------------------------------
-hallo_heimur: (
-  print "Halló heimur!\n"
-)
+	PI: 1.14 					!skilgreining á fastanum PI
+	rummal_kulu: y = r^3*PI*4/3 !falls skilgreining fyrir rúmmál kúlu
 
-hallo_heimur
---------------------------------------------------------------------
+	v: rummal_kulu 3 			!kallað á fallið rummal_kulu með r=3
+	printn v 					!rúmmálið prentað út í sér línu
 
-frátekin nöfn:
+
+Halló heimur:
+
+	print "Halló heimur!\n"
+
+Sama og fyrir ofan:
+
+	hallo_heimur: (
+	  print "Halló heimur!\n"
+	)
+
+	hallo_heimur
+
+Breytuheiti
+-----------
+
+Breytuheiti mega innihalda hvaða bókstaf og tölustaf sem er ásamt tákninu "_".
+Einu skilyrðin eru að heitið byrji á bókstaf og sé ekki eitt af fráteknu nöfnunum í Nob.
+
+Frátekin nöfn:
 	n
 	y
 	if
@@ -31,19 +45,24 @@ frátekin nöfn:
 	t
 	f
 	
-whitespace is critical
 
-GAGNATÖG:
+
+GAGNATÖG
+--------
+
 	heiltala,
 	fleytitala,
 	strengur,
-	boolean, !t eða f
+	boolean,
 
-GAGNALÍKÖN:
+GAGNALÍKÖN
+----------
+
 	vigur,
 	fylki,
 
-EXPRESSION:
+EXPRESSION
+----------
 
 dæmi: 
 	1+2
@@ -55,13 +74,15 @@ dæmi:
 	1+2*3 eq. 1+(2*3)
 	(1+2)*3
 
-ABSTRACT EXPRESSION:
+ABSTRACT EXPRESSION
+-------------------
 
 dæmi:
 	a+1
 	x^2+2x+a
 
-Fall skilgreining:
+Falls skilgreiningar
+-------------------
 
 nafn: y = ABSTRACT EXPRESSION
 
@@ -72,7 +93,8 @@ kall: kalla má á föll með nefndum breytum eða breytunum í þeirri röð se
 	rummal_kulu r=5, pi=3.14 !not implemented
 	rk: rummal_kulu 5, 3.14
 
-Breytu skilgreining:
+Breytu skilgreiningar
+---------------------
 
 dæmi:
 	a: 1
