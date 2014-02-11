@@ -35,6 +35,7 @@ Breytuheiti mega innihalda hvaða bókstaf og tölustaf sem er ásamt tákninu "
 Einu skilyrðin eru að heitið byrji á bókstaf og sé ekki eitt af fráteknu nöfnunum í Nob.
 
 Frátekin nöfn:
+
 	n
 	y
 	if
@@ -45,9 +46,13 @@ Frátekin nöfn:
 	t
 	f
 	
+Eftirfarandi tekur boolean gildið f:
 
+	tómur strengur, 
+	tómur vigur, 
+	heiltalann 0,
 
-GAGNATÖG
+Gagnatög
 --------
 
 	heiltala,
@@ -55,16 +60,17 @@ GAGNATÖG
 	strengur,
 	boolean,
 
-GAGNALÍKÖN
+Gagnalíkön
 ----------
 
 	vigur,
 	fylki,
 
-EXPRESSION
+Aðgerðir
 ----------
 
-dæmi: 
+dæmi:
+
 	1+2
 	1*2
 	1-2
@@ -73,30 +79,30 @@ dæmi:
 	2^2
 	1+2*3 eq. 1+(2*3)
 	(1+2)*3
-
-ABSTRACT EXPRESSION
--------------------
-
-dæmi:
 	a+1
 	x^2+2x+a
 
 Falls skilgreiningar
 -------------------
 
-nafn: y = ABSTRACT EXPRESSION
+almennt:
+
+	nafn: y = EXPRESSION
 
 dæmi:
+
 	rummal_kulu: y = r^3*pi*4/3
 
-kall: kalla má á föll með nefndum breytum eða breytunum í þeirri röð sem þær byrtast
+Köll: kalla má á föll með nefndum breytum eða breytunum í þeirri röð sem þær byrtast
+
 	rummal_kulu r=5, pi=3.14 !not implemented
 	rk: rummal_kulu 5, 3.14
 
 Breytu skilgreiningar
 ---------------------
 
-dæmi:
+breytur:
+
 	a: 1
 	b: 2, c: 3 !not implemented
 	d: [1 2 3]
@@ -105,65 +111,94 @@ dæmi:
 	d: 1:1:3  !not implemented
 
 tómur vigur:
+
 	a: []
 
 fylki:
+
 	A: [1 2 3, 4 5 6]
 
 runur: not implemented
+
 	a: 1:1: !1,2,3,4,...
 	a: 1,n+1
 	b: 1,1,n-2+n-1
 
-comment
- <!------------------------------->
-    eru inni í svona 
-    dóti með upphrópunarmerki
-    með stærra en og minna merki
-    sem opna og loka
- <-------------------------------!>
+Athugasemdir
+------------
 
-<!
-  eru inni í svona 
-  dóti með upphrópunarmerki
-  með stærra en og minna merki
-  sem opna og loka 
-!>
+	 <!------------------------------->
+	   Þetta er athugasemd sem má
+	   taka margar línur
+	 <-------------------------------!>
+
+	<!
+	  Þetta er önnur athugasmed sem
+	  má taka margar línur
+	!>
 
  eða
  
- !þetta er komment
+ 	!þetta er athugasemd í einni línu
 
-for i=1:3
-  print "a"
+For lykkja
+----------
 
-boolean gildið f, tómur strengur, tómur vigur, og heiltalann 0 er tekið sem ósatt
+	for i=[1 2 3]
+	  print i
 
-while a>0
-  print a
-  a: a-1
+	!>> 1 2 3
 
-if a
-  print a
-elif b or d
-  print b
-else
-  print c
+while lykkja
+------------
 
-print 1, 2, 3
-!>> 1 2 3
+	a: 3
+	while a>0
+	  print a
+	  a: a-1
 
-prints [1 2 3], ", "
-!>> 1, 2, 3.
+	!>> 3 2 1
 
-print 1, 2, 3, "\n"
-!>> 1 2 3
+if setning
+----------
 
-printn 1, 2, 3
-!>> 1
-!>> 2
-!>> 3
+	a: t
+	b: f
 
+	if a
+	  print 1
+	elif b
+	  print 2
+	else
+	  print 3
+
+	!>> 1
+
+Úttak
+-----
+
+	print 1, 2, 3
+	!>> 1 2 3
+
+	prints [1 2 3], ", "
+	!>> 1, 2, 3
+
+	print 1, 2, 3, "\n"
+	!>> 1 2 3
+
+	prints [1 2 3], "\n"
+	!>> 1
+	!>> 2
+	!>> 3
+
+	printn 1, 2, 3
+	!>> 1
+	!>> 2
+	!>> 3
+
+
+Skriptur og forrit
+------------------
 
 Hvert skjal má innihalda mörg föll
 hægt er að includea skjalinu með
@@ -176,22 +211,21 @@ beint í fallið með nafn eftir að því er includeað
 
 föll sem eru margar skipanir eru skilgreind svona:
 
-nafn: y = (
-  skipanir
-  return breyta
-)
+	nafn: y = (
+	  skipanir
+	  return breyta
+	)
 
-eða !not implemented
+eða fyrir fall sem skilar engu
 
-nafn: (
-  skipanir
-)
-
-fyrir fall sem skilar engu
+	!not implemented
+	nafn: (
+	  skipanir
+	)
 
 breyta nefnd með stórum stöfum erfist með sviðum en þær með litlum stöfum gera það ekki.
-þannig fallið rummal_kulu tekur aðeins inn eina breytu r en fallið rummal_kulu_r tekur inn bæði r og pi
+Þannig fallið rummal_kulu tekur aðeins inn eina breytu r en fallið rummal_kulu_pi tekur inn bæði r og pi
 
-PI = 3.14
-rummal_kulu: y = r^3*PI*4/3
-rummal_kulu_r: y = r^3*pi*4/3
+	PI = 3.14
+	rummal_kulu: y = r^3*PI*4/3
+	rummal_kulu_pi: y = r^3*pi*4/3
