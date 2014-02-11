@@ -1,0 +1,15 @@
+<!
+    Þetta er sýniforrit fyrir Nub
+!>
+PI: 3.14    !skilgreining á fasta pi
+E: 2.78
+
+
+!stærðfræðiföll
+
+flatramal_hrings: 	 	y= PI*r^2
+ummal_hrings:    		y = 2*PI*r
+flatarmal_fernings:		y = h*b
+ummal_fernings:  		y = 2*h+2*b
+rummal_kulu:	     	y = 4.0*PI*r^3/3.0
+rummal_kassa:			y = h*b*d
